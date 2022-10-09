@@ -1,0 +1,7 @@
+{
+  "name": "sus-tube",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
