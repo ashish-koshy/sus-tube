@@ -13,7 +13,7 @@
         "prepare": "husky install",
         "lint-staged": "lint-staged",
         "test-pwa": "ng build --configuration production && npx http-server www",
-        "test-app-shell": "ng run app:app-shell:production"
+        "generate-app-shell": "ng run app:app-shell:production"
     },
     "repository": {
         "type": "git",
