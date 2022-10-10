@@ -70,6 +70,23 @@
                                 }
                             ]
                         },
+                        "development": {
+                            "optimization": false,
+                            "outputHashing": "none",
+                            "sourceMap": true,
+                            "namedChunks": true,
+                            "aot": false,
+                            "extractLicenses": false,
+                            "vendorChunk": true,
+                            "buildOptimizer": false,
+                            "budgets": [
+                                {
+                                    "type": "initial",
+                                    "maximumWarning": "10mb",
+                                    "maximumError": "20mb"
+                                }
+                            ]
+                        },
                         "ci": {
                             "progress": false
                         }
