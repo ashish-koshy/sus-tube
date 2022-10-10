@@ -175,6 +175,7 @@
                             "sourceMap": false,
                             "extractLicenses": true
                         },
+                        "development": {},
                         "ci": {}
                     },
                     "defaultConfiguration": "production"
@@ -189,6 +190,7 @@
                             "browserTarget": "app:build:production",
                             "serverTarget": "app:server:production"
                         },
+                        "development": {},
                         "ci": {
                             "browserTarget": "app:build:ci",
                             "serverTarget": "app:server:ci"
