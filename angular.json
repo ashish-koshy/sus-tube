@@ -13,7 +13,7 @@
                 "build": {
                     "builder": "@angular-devkit/build-angular:browser",
                     "options": {
-                        "outputPath": "www",
+                        "outputPath": "dist/app/browser",
                         "index": "src/index.html",
                         "main": "src/main.ts",
                         "polyfills": "src/polyfills.ts",
@@ -142,6 +142,50 @@
                             "devServerTarget": "app:serve:ci"
                         }
                     }
+                },
+                "server": {
+                    "builder": "@angular-devkit/build-angular:server",
+                    "options": {
+                        "outputPath": "dist/app/server",
+                        "main": "src/main.server.ts",
+                        "tsConfig": "tsconfig.server.json",
+                        "optimization": false,
+                        "sourceMap": true,
+                        "extractLicenses": false
+                    },
+                    "configurations": {
+                        "production": {
+                            "outputHashing": "media",
+                            "fileReplacements": [
+                                {
+                                    "replace": "src/environments/environment.ts",
+                                    "with": "src/environments/environment.prod.ts"
+                                }
+                            ],
+                            "optimization": true,
+                            "sourceMap": false,
+                            "extractLicenses": true
+                        },
+                        "ci": {}
+                    },
+                    "defaultConfiguration": "production"
+                },
+                "app-shell": {
+                    "builder": "@angular-devkit/build-angular:app-shell",
+                    "options": {
+                        "route": "shell"
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "app:build:production",
+                            "serverTarget": "app:server:production"
+                        },
+                        "ci": {
+                            "browserTarget": "app:build:ci",
+                            "serverTarget": "app:server:ci"
+                        }
+                    },
+                    "defaultConfiguration": "production"
                 }
             }
         }

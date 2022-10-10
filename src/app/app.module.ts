@@ -1,6 +1,6 @@
 import { APP_INITIALIZER, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RouteReuseStrategy } from '@angular/router';
+import { RouteReuseStrategy, RouterModule } from '@angular/router';
 
 import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 
@@ -23,7 +23,7 @@ const setAppConfig = (appConfig: AppConfigService) => (): Observable<unknown> =>
 @NgModule({
     declarations: [AppComponent],
     imports: [
-        BrowserModule,
+        BrowserModule.withServerTransition({ appId: 'serverApp' }),
         IonicModule.forRoot(),
         AppRoutingModule,
         HttpClientModule,
@@ -35,6 +35,7 @@ const setAppConfig = (appConfig: AppConfigService) => (): Observable<unknown> =>
              */
             registrationStrategy: 'registerWhenStable:30000',
         }),
+        RouterModule,
     ],
     providers: [
         AppConfigService,
