@@ -9,7 +9,13 @@ import { AppModule } from './app.module';
 const routes: Routes = [{ path: 'shell', component: AppShellComponent }];
 
 @NgModule({
-    imports: [AppModule, ServerModule, RouterModule.forRoot(routes)],
+    imports: [
+        AppModule,
+        ServerModule,
+        RouterModule.forRoot(routes, {
+            initialNavigation: 'enabledBlocking',
+        }),
+    ],
     bootstrap: [AppComponent],
     declarations: [AppShellComponent],
 })

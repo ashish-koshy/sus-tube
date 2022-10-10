@@ -13,7 +13,11 @@
         "prepare": "husky install",
         "lint-staged": "lint-staged",
         "test-pwa": "ng build --configuration production && npx http-server www",
-        "generate-app-shell": "ng run app:app-shell:production"
+        "generate-app-shell": "ng run app:app-shell:production",
+        "dev:ssr": "ng run app:serve-ssr",
+        "serve:ssr": "node dist/app/server/main.js",
+        "build:ssr": "ng build && ng run app:server",
+        "prerender": "ng run app:prerender"
     },
     "repository": {
         "type": "git",
@@ -46,8 +50,10 @@
         "@capacitor/status-bar": "4.0.1",
         "@ionic/angular": "^6.1.9",
         "@ng-bootstrap/ng-bootstrap": "^13.0.0",
+        "@nguniversal/express-engine": "^14.2.0",
         "@popperjs/core": "^2.11.6",
         "bootstrap": "^5.2.2",
+        "express": "^4.15.2",
         "ionicons": "^6.0.3",
         "rxjs": "~6.6.0",
         "tslib": "^2.2.0",
@@ -69,7 +75,9 @@
         "@ashish-koshy/ng-schematics": "^13.0.2",
         "@capacitor/cli": "4.3.0",
         "@ionic/angular-toolkit": "^6.0.0",
+        "@nguniversal/builders": "^14.2.0",
         "@schematics/angular": "^14.2.4",
+        "@types/express": "^4.17.0",
         "@types/jasmine": "~3.6.0",
         "@types/jasminewd2": "~2.0.3",
         "@types/node": "^12.11.1",
