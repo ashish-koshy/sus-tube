@@ -2,8 +2,8 @@ import { CapacitorConfig } from '@capacitor/cli';
 
 const config: CapacitorConfig = {
     appId: 'io.ionic.starter',
-    appName: 'sus-tube',
-    webDir: 'www',
+    appName: 'SusTube',
+    webDir: 'dist/app/browser',
     bundledWebRuntime: false,
 };
 
