@@ -13,7 +13,7 @@
         "test": "ng test --watch=false --browsers ChromeHeadless",
         "prepare": "husky install",
         "lint-staged": "lint-staged",
-        "test-pwa": "ng build --configuration production && npx http-server www",
+        "test-pwa": "ng build --configuration production && npx http-server dist/app/browser",
         "generate-app-shell": "ng run app:app-shell:production",
         "dev:ssr": "ng run app:serve-ssr",
         "serve:ssr": "node dist/app/server/main.js",
